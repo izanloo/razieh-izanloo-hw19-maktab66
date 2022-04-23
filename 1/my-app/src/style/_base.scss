@@ -1,0 +1,206 @@
+@import "./abstracts/_variables.scss";
+
+body{
+  color: $white;
+  background-color: $body;
+}
+
+.header{
+  padding: 15px 40px;
+  background-color: $grayLight;
+  display: flex;
+  justify-content: space-between;
+}
+
+//Home************************
+.card {
+  box-shadow: 0 4px 8px 0 $boxShadow;
+  transition: 0.3s;
+  width: 40%;
+  display: inline flow-root list-item;
+  width: 21%;
+  background: $grayLight;
+  margin: 0px 15px 38px 15px;
+  border-radius: 5px;
+  &:hover {
+    box-shadow: 0 8px 16px 0 $boxShadow;
+  } 
+  .textCard{
+    text-align: left;
+    padding-left: 25px;
+    line-height: 0.8;
+    padding-bottom: 19px;
+  }
+}
+
+
+.imgCard{
+  height: 140px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.home{
+  text-align: center;
+  margin-top: 43px;
+}
+
+//search component***********************
+.serch{
+padding-top: 32px;
+padding-left: 28px;
+}
+.serchInput{
+  width: 28%;
+  height: 35px;
+  border-radius: 5px;
+  border: 0px;
+  background-color: $grayLight;
+  color: $white;
+  padding: 0px 35px;
+}
+//public
+.w-100{
+  width: 100%;
+}
+
+//Them Dark mode
+.dark-mode {
+  color: $black;
+  background-color: $white;
+  .header{
+    background-color: $white ;
+    box-shadow: 0 4px 8px 0 $boxShadow;
+
+  }
+  .card{
+    background-color: $white;
+  }
+  .serchInput{
+    background-color: $white;
+    color: $black;
+    box-shadow: 0 4px 8px 0 $boxShadow;
+
+  }   
+}
+.textThem{
+  padding-left: 14px;
+}
+//detail component
+.detail{
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-top: 62px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.caption-detail{
+  display: flex;
+  padding-top: 5px;
+  justify-content: space-between;
+}
+.caption2{
+  padding-top: 45px;
+}
+.details{
+  width: 50%;
+  padding-left: 73px;}
+
+.btnCountry{
+  text-decoration: none;
+  border: 1px solid $boxShadow;
+  width: 120px;
+  width: auto;
+  padding: 2px 18px;
+  border-radius: 5px;
+  color: $white;
+  margin: 4px;
+}
+.w50{
+  width: 50%;
+}
+
+.back{
+  margin-top: 50px;
+}
+.btnBack{
+  margin-left: 31px;
+  margin-top: 48px;
+  padding: 5px 16px;
+  color: $white;
+  background: $grayLight;
+  border-radius: 5px;
+  border: 0px;
+  text-decoration: none;
+}
+
+//Responsive***********************
+@mixin deskLg {
+  @media screen and (min-width: 1020px) {
+      @content;
+  }
+}
+@mixin desk {
+  @media screen and (min-width: 630px) {
+      @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: 600px) {
+      @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 428px) {
+      @content;
+  }
+}
+@include tablet {
+  .card{ 
+    width: 42%;
+  }
+
+  //detail component
+  .detail{
+    display: block;
+    img{
+      width: 100%;
+    }
+  }
+  .details{
+  display: block;
+  width: 100%;
+  padding-left: 0px;
+  }
+  .caption-detail{
+    display: block;
+  }
+  .caption2 {
+    padding-top: 8px;
+  }
+  .detail-Box{
+    width: 100%;
+  }
+}
+@include mobile {
+  .card{ 
+    width: 80%;
+  }
+
+
+}
+@include desk {
+  .card{ 
+    width: 28%;
+  }
+}
+@include deskLg() {
+  .card{ 
+    width: 20%;
+  }
+}
+
+
+
